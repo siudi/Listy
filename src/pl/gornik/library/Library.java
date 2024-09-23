@@ -37,13 +37,32 @@ public class Library {
 
     public List<Book> searchBook(String type){
         List<Book> booksInType = new ArrayList<>();
-
         for(Book book: books){
             if(book.getType().getName().equals(type)) booksInType.add(book);
         }
-
          return booksInType;
+    }
 
+    public List<Book> searchBookByAuthor(String author){
+        List<Book> booksInType = new ArrayList<>();
+        for(Book book: books){
+            if(book.getAuthor().equals(author)) booksInType.add(book);
+        }
+        return booksInType;
+    }
+
+    public List<Book> searchBookByTitle(String title){
+        List<Book> booksInType = new ArrayList<>();
+        for(Book book: books){
+            if(book.getTitle().equals(title)) booksInType.add(book);
+        }
+        return booksInType;
+    }
+
+    public void removeBooksYear(int year){
+        for(Book book : books){
+            if(year == book.getYearOfPublication()) books.remove(book);
+        }
     }
 
 }
